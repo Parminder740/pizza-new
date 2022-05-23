@@ -8,21 +8,16 @@ import { PizzaService } from "../pizza.service";
 })
 
 export class PaypalComponent implements OnInit {
-
-
-
-
   public payPalConfig?: IPayPalConfig;
   showSuccess: boolean | undefined;
   totalAmountToPay: any;
 
 
-  constructor(private service:PizzaService) { }
-
+  constructor(private service: PizzaService) { }
 
   data: any
   a: any
-  selectedMode:any
+  selectedMode: any
   ngOnInit(): void {
     console.log(this.selectedMode)
     this.a = localStorage.getItem("login")
@@ -87,17 +82,18 @@ export class PaypalComponent implements OnInit {
       onClick: (data, actions) => {
         console.log('onClick', data, actions);
       },
-      
+
 
     };
-  
+
   }
- 
-  onChecked(){
-    console.log("1",this.selectedMode)
+
+  onChecked() {
+    console.log("1", this.selectedMode)
   }
-isModeSelected(){
-return (this.selectedMode===undefined)? true:false
-}
+
+  isModeSelected() {
+    return (this.selectedMode === undefined) ? true : false
+  }
 
 }
