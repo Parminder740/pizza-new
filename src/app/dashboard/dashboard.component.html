@@ -1,0 +1,100 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item style="color: red;" routerLink="">Logout<mat-icon style="margin: 5px; color: black;">logout
+        </mat-icon></button>
+    </mat-menu>
+  </button>
+  <span id="pizza" routerLink="">Pizza </span>
+  <div style="margin: 20%;" class="input-group">
+    <input type="text" class="form-control" placeholder="Search..">
+    <div class="input-group-append">
+      <button><img style="width: 35px; height: 35px;"
+          src="https://toppng.com/uploads/preview/search-icon-customer-icon-11564158924ifw7wyjtfu.png" alt="search">
+      </button>
+    </div>
+  </div>
+  <span class="example-spacer"></span>
+  Dark Mode<label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+  <button style="cursor: pointer; margin: 5px;" mat-raised-button color="warn" mat-icon-button class="example-icon"
+    aria-label="Example icon-button with share icon" routerLink="/userprofile">
+    <mat-icon>face</mat-icon>
+  </button>{{view.fname}}
+  <mat-icon style="margin-left: 10px;" class="cart" routerLink="/cart">shopping_cart</mat-icon>
+</mat-toolbar>
+
+
+<!-- <div class="container">
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <div class="carosel-img">
+        <img
+          src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVwcGVyb25pJTIwcGl6emF8ZW58MHx8MHx8&w=1000&q=80"
+          alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>10 seconds between slides...</h3>
+        <p>This carousel uses customized default values.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="carosel-img">
+        <img
+          src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVwcGVyb25pJTIwcGl6emF8ZW58MHx8MHx8&w=1000&q=80"
+          alt="Random second slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>No mouse events...</h3>
+        <p>This carousel doesn't pause or resume on mouse events</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="carosel-img">
+        <img
+          src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVwcGVyb25pJTIwcGl6emF8ZW58MHx8MHx8&w=1000&q=80"
+          alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>No keyboard...</h3>
+        <p>This carousel uses customized default values.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="carosel-img">
+        <img
+          src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&w=1000&q=80"
+          alt="Random fourth slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>And no wrap after last slide.</h3>
+        <p>This carousel uses customized default values.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div> -->
+
+<section class="vh-100">
+  <div class="toggleButton">
+    <h2>Veg</h2>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="row">
+    <div *ngFor="let item of data" class="card" style="width: 15rem;">
+      <h5 style="font-weight:bold; font-size:large; padding: 10px; " class="card-title">{{item.name}}</h5>
+      <img mat-card-image src={{item.image}} class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">{{item.topping}}</p>
+        <p style="font-weight:bold" class="card-text">Price: ₹{{item.price}}</p>
+        <a class="btn btn-primary" (click)="passData(item)">Add To Cart</a>
+      </div>
+    </div>
+  </div>
+</section>

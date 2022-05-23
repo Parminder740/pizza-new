@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <h1>Continue Your Payment</h1>
+</mat-toolbar>
+<section>
+    <div  class="cont">
+        <h1>Select Your Mode of Payment</h1>
+        <hr>
+        <mat-radio-group [(ngModel)]="selectedMode" (change)="onChecked()"  aria-label="Select an option"><br>
+            <mat-radio-button value="COD">COD(Cash On Delivery)</mat-radio-button><br><br><br>
+            <mat-radio-button  value="PAYPAL">
+                <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+            </mat-radio-button>
+        </mat-radio-group>
+        <hr>
+        <h1>Check Your Address</h1>
+        <h2>Your Location is : {{data.address}}</h2><br>
+        <hr>
+        <button class="btn btn-primary" style="padding: 10px ;" [disabled]="isModeSelected()" routerLink="/Recipt" type="file">Place Your Order : <span>₹{{totalAmountToPay}}</span></button>
+
+    </div>
+
+</section>
