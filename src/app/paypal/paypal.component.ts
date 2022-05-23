@@ -9,16 +9,11 @@ import { PizzaService } from "../pizza.service";
 
 export class PaypalComponent implements OnInit {
 
-
-
-
   public payPalConfig?: IPayPalConfig;
   showSuccess: boolean | undefined;
   totalAmountToPay: any;
 
-
   constructor(private service:PizzaService) { }
-
 
   data: any
   a: any
