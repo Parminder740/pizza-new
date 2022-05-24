@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { PizzaService } from "../pizza.service";
 import { ActivatedRoute } from "@angular/router";
 import { ThemeService } from "../theme.service";
+
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -37,6 +40,8 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+
+
   toggleDarkMode() {
     this.isDarkMode = this.theme.isDarkMode();
 
@@ -44,4 +49,6 @@ export class DashboardComponent implements OnInit {
       ? this.theme.update('light-mode')
       : this.theme.update('dark-mode');
   }
+
+
 }

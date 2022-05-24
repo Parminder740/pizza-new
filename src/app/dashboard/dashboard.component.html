@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar style="background-color: rgb(0, 85, 155);" >
   <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu"
     aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
@@ -16,13 +16,30 @@
       </button>
     </div>
   </div>
-  <input  type="checkbox" id="toggle">
-  <label (click)="toggleDarkMode()" [(ngModel)]="isDarkMode"
-    for="toggle" class="dark-light" ></label>
-  <button style="cursor: pointer; margin: 5px;" mat-raised-button color="warn" mat-icon-button class="example-icon"
+  <!-- <input  type="checkbox" id="toggle"> -->
+  <img src="https://cdn-icons.flaticon.com/png/128/5558/premium/5558234.png?token=exp=1653386351~hmac=56452a3c63bd10c1411367c65a70b77e"  style="width: 40px; height:40px" class="dark-light"  (click)="toggleDarkMode()" [(ngModel)]="isDarkMode">
+
+  <button style="cursor: pointer; margin: 5px; float: right;" mat-raised-button color="warn" mat-icon-button class="example-icon"
     aria-label="Example icon-button with share icon" routerLink="/userprofile">
     <mat-icon>face</mat-icon>
   </button>{{view.fname}}
+  <div mdbDropdown class="dropdown">
+    <a
+      class="btn btn-primary dropdown-toggle"
+      role="button"
+      id="dropdownMenuLink"
+      mdbDropdownToggle
+      aria-expanded="false"
+    >
+    </a>
+    <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+
+
   <mat-icon style="margin-left: 10px;" class="cart" routerLink="/cart">shopping_cart</mat-icon>
 </mat-toolbar>
 
