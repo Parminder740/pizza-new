@@ -102,7 +102,7 @@ input:checked+.slider:before {
 
 .main {
   width: 10%;
-  margin: 50px ;
+  margin: 50px;
 }
 
 /* Bootstrap 4 text input with search icon */
@@ -123,8 +123,51 @@ input:checked+.slider:before {
   color: #aaa;
 }
 
-.input-group{
+.input-group {
   width: 30%;
   justify-content: center;
   align-items: center;
 }
+
+#toggle {
+  display: none;
+  float: right;
+}
+
+.dark-light {
+  display: inline-block;
+  width: 90px;
+  height: 35px;
+  background-color: white;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.dark-light::after {
+  content: url('../image/sun-light.svg');
+  width: 40px;
+  height: 40px;
+  background-color: rgb(219, 70, 70);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+  position: absolute;
+  top: -5px;
+  left: 0;
+  display: grid;
+  place-content: center;
+  line-height: 0;
+  transition: background-color 1s,
+    transform 1s ease-in;
+}
+
+#toggle:checked+.dark-light::after {
+  content: url('../image/moon-light.svg');
+  background-color: #26394d;
+  transform: translateX(50px) rotate(360deg);
+}
+// .spinner{
+//   width: 20px;
+//   height: 20px;
+// }
