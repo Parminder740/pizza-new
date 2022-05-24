@@ -138,14 +138,14 @@ input:checked+.slider:before {
   display: inline-block;
   width: 90px;
   height: 30px;
-  background-color: blue;
+  background-color: whitesmoke;
   border-radius: 30px;
   position: relative;
   cursor: pointer;
 }
 
 .dark-light::after {
-  content: url('../image/sun-line.svg');
+  content: url('/src/assets/sun-line.svg');
   width: 40px;
   height: 40px;
   background-color: rgb(219, 70, 70);
@@ -163,11 +163,7 @@ input:checked+.slider:before {
 }
 
 #toggle:checked+.dark-light::after {
-  content: url('../image/moon-line.svg');
+  content: url('/src/assets/moon-line.svg');
   background-color: #26394d;
   transform: translateX(50px) rotate(360deg);
 }
-// .spinner{
-//   width: 20px;
-//   height: 20px;
-// }
