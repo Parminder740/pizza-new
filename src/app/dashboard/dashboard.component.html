@@ -16,8 +16,9 @@
       </button>
     </div>
   </div>
-  <input type="checkbox" id="toggle">
-  <label for="toggle" class="dark-light" ></label>
+  <input  type="checkbox" id="toggle">
+  <label (click)="toggleDarkMode()" [(ngModel)]="isDarkMode"
+    for="toggle" class="dark-light" ></label>
   <button style="cursor: pointer; margin: 5px;" mat-raised-button color="warn" mat-icon-button class="example-icon"
     aria-label="Example icon-button with share icon" routerLink="/userprofile">
     <mat-icon>face</mat-icon>
@@ -26,7 +27,7 @@
 </mat-toolbar>
 
 
-<div class="container">
+<!-- <div class="container">
   <ngb-carousel>
     <ng-template ngbSlide>
       <div class="carosel-img">
@@ -73,7 +74,7 @@
       </div>
     </ng-template>
   </ngb-carousel>
-</div>
+</div> -->
 
 <section class="vh-100">
   <div class="toggleButton">
