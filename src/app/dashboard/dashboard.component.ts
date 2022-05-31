@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PizzaService } from "../pizza.service";
 import { ActivatedRoute } from "@angular/router";
+import { ThemeService } from "../theme.service";
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,8 +14,14 @@ export class DashboardComponent implements OnInit {
   data: any = []
   profile: any = []
   view: any;
-
-  constructor(private pizzaData: PizzaService, private router: ActivatedRoute) { }
+  title = 'dark-theme-yt'; 
+  isDarkMode: boolean;
+  showFiller= false;
+  
+  constructor(private pizzaData: PizzaService, private router: ActivatedRoute, private theme: ThemeService) {
+    this.theme.initTheme();
+    this.isDarkMode=this.theme.isDarkMode();
+   }
   ngOnInit() {
 
     this.profile = localStorage.getItem('login')
@@ -30,5 +39,16 @@ export class DashboardComponent implements OnInit {
       console.log(result)
     })
   }
+
+
+
+  toggleDarkMode() {
+    this.isDarkMode = this.theme.isDarkMode();
+
+    this.isDarkMode
+      ? this.theme.update('light-mode')
+      : this.theme.update('dark-mode');
+  }
+
 
 }

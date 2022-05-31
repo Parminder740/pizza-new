@@ -12,8 +12,7 @@ export class PaypalComponent implements OnInit {
   showSuccess: boolean | undefined;
   totalAmountToPay: any;
 
-
-  constructor(private service: PizzaService) { }
+  constructor(private service:PizzaService) { }
 
   data: any
   a: any

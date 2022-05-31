@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar style="background-color: rgb(0, 85, 155);" >
   <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu"
     aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
@@ -16,15 +16,30 @@
       </button>
     </div>
   </div>
-  <span class="example-spacer"></span>
-  Dark Mode<label class="switch">
-    <input type="checkbox">
-    <span class="slider round"></span>
-  </label>
-  <button style="cursor: pointer; margin: 5px;" mat-raised-button color="warn" mat-icon-button class="example-icon"
+  <!-- <input  type="checkbox" id="toggle"> -->
+  <img src="https://cdn-icons.flaticon.com/png/128/5558/premium/5558234.png?token=exp=1653386351~hmac=56452a3c63bd10c1411367c65a70b77e"  style="width: 40px; height:40px" class="dark-light"  (click)="toggleDarkMode()" [(ngModel)]="isDarkMode">
+
+  <button style="cursor: pointer; margin: 5px; float: right;" mat-raised-button color="warn" mat-icon-button class="example-icon"
     aria-label="Example icon-button with share icon" routerLink="/userprofile">
     <mat-icon>face</mat-icon>
   </button>{{view.fname}}
+  <div mdbDropdown class="dropdown">
+    <a
+      class="btn btn-primary dropdown-toggle"
+      role="button"
+      id="dropdownMenuLink"
+      mdbDropdownToggle
+      aria-expanded="false"
+    >
+    </a>
+    <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+
+
   <mat-icon style="margin-left: 10px;" class="cart" routerLink="/cart">shopping_cart</mat-icon>
 </mat-toolbar>
 
@@ -34,7 +49,7 @@
     <ng-template ngbSlide>
       <div class="carosel-img">
         <img
-          src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVwcGVyb25pJTIwcGl6emF8ZW58MHx8MHx8&w=1000&q=80"
+          src="https://cdn.pixabay.com/photo/2020/05/17/04/22/pizza-5179939__340.jpg"
           alt="Random first slide">
       </div>
       <div class="carousel-caption">
@@ -45,7 +60,7 @@
     <ng-template ngbSlide>
       <div class="carosel-img">
         <img
-          src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVwcGVyb25pJTIwcGl6emF8ZW58MHx8MHx8&w=1000&q=80"
+          src="C:\Users\TP\Desktop\angular projects\pizza-new\image"
           alt="Random second slide">
       </div>
       <div class="carousel-caption">
@@ -56,7 +71,7 @@
     <ng-template ngbSlide>
       <div class="carosel-img">
         <img
-          src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVwcGVyb25pJTIwcGl6emF8ZW58MHx8MHx8&w=1000&q=80"
+          src="/image/pizza3.jpg"
           alt="Random third slide">
       </div>
       <div class="carousel-caption">
@@ -67,7 +82,7 @@
     <ng-template ngbSlide>
       <div class="carosel-img">
         <img
-          src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&w=1000&q=80"
+          src="/image/pizza4.jpg"
           alt="Random fourth slide">
       </div>
       <div class="carousel-caption">
@@ -85,7 +100,7 @@
       <input type="checkbox">
       <span class="slider round"></span>
     </label>
-  </div>
+   </div>
   <div class="row">
     <div *ngFor="let item of data" class="card" style="width: 15rem;">
       <h5 style="font-weight:bold; font-size:large; padding: 10px; " class="card-title">{{item.name}}</h5>
@@ -97,4 +112,8 @@
       </div>
     </div>
   </div>
-</section>
+
+ 
+   
+
+

@@ -27,6 +27,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReciptComponent } from './recipt/recipt.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import {MatSelectModule} from '@angular/material/select';
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,9 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     NgxPayPalModule,
     MatMenuModule,
     MatSidenavModule,
+    MatSelectModule,
     MatRadioModule,
+    MdbDropdownModule,
     MatSlideToggleModule,
     NgxMaskModule.forRoot(),
     NgxUiLoaderModule,
