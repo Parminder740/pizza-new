@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
       this.collection = r;
       this.collection.forEach((item: any) => {
         item['qty'] = 1
-        this.calcuteNetPrice(item)
+        this.calculateNetPrice(item)
       });
       this.calculateTotalPrice()
     })
@@ -40,7 +40,7 @@ export class CartComponent implements OnInit {
   decrement(item: any) {
     if (item['qty'] != 1) {
       item['qty']--
-      this.calcuteNetPrice(item)
+      this.calculateNetPrice(item)
       this.calculateTotalPrice()
     }
   }
@@ -48,12 +48,12 @@ export class CartComponent implements OnInit {
   increment(item: any) {
     if (item['qty']) {
       item['qty']++
-      this.calcuteNetPrice(item)
+      this.calculateNetPrice(item)
       this.calculateTotalPrice()
     }
   }
 
-  calcuteNetPrice(item:any){
+  calculateNetPrice(item:any){
     item['netprice'] = item['qty'] * item.price;
   }
 
